@@ -13,7 +13,7 @@ module WebsocketRails
     end
 
     def self.dispatcher
-      @@dispatcher
+      @dispatcher
     end
 
     def receive_encoded(encoded_data,connection)
