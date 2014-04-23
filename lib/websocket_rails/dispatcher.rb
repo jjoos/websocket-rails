@@ -8,7 +8,12 @@ module WebsocketRails
     def initialize(connection_manager)
       @connection_manager = connection_manager
       @controller_factory = ControllerFactory.new(self)
+      @@dispatcher = self
       @event_map = EventMap.new(self)
+    end
+
+    def self.dispatcher
+      @@dispatcher
     end
 
     def receive_encoded(encoded_data,connection)
